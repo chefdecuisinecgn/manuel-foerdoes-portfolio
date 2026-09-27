@@ -1,0 +1,491 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}*{box-sizing:border-box}body{margin:0;padding:0}img{max-width:100%}</style></head><body>
+<title>Manuel Fördös</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #131C17;
+    --bg-alt: #1A251E;
+    --text: #F1E9D8;
+    --text-muted: #9FB09B;
+    --accent: #CB9A5D;
+    --accent-2: #9A4C51;
+    --line: rgba(241, 233, 216, 0.14);
+    --line-strong: rgba(241, 233, 216, 0.28);
+    --shadow-ink: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page-inner {
+    max-width: 920px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1, h2 {
+    font-family: "Fraunces", Georgia, serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  p { text-wrap: pretty; }
+
+  img { max-width: 100%; display: block; }
+
+  /* ---------- Hero (photo) ---------- */
+
+  .hero {
+    position: relative;
+    min-height: clamp(420px, 74vh, 760px);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0D1310;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 68% 40%;
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(9, 13, 11, 0.15) 0%, rgba(9, 13, 11, 0.2) 40%, rgba(9, 13, 11, 0.86) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: clamp(1.6rem, 5vw, 3rem) clamp(1.4rem, 6vw, 3.2rem) clamp(2.2rem, 6vw, 3.6rem);
+    text-align: center;
+  }
+
+  .hero-content .eyebrow {
+    color: #D6AD74;
+  }
+
+  .hero-content h1 {
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(2.6rem, 8.4vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    color: #F7F0E1;
+    margin-top: clamp(0.8rem, 2vw, 1.2rem);
+  }
+
+  .hero-role {
+    margin: clamp(0.9rem, 2vw, 1.3rem) auto 0;
+    max-width: 34ch;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: #D9D2C0;
+    font-weight: 400;
+  }
+
+  /* ---------- Section shell ---------- */
+
+  section {
+    padding-block: clamp(2.4rem, 6vw, 3.6rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(1.6rem, 4vw, 2.4rem);
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    font-weight: 400;
+  }
+
+  /* ---------- Küche / Philosophie ---------- */
+
+  .kueche {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+
+  .kueche p {
+    max-width: 62ch;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .kueche p + p {
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  section[aria-labelledby="anlaesse-heading"] p + p {
+    color: var(--text);
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  }
+
+  /* ---------- Teller (Galerie) ---------- */
+
+  .teller-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.5rem, 1.6vw, 0.9rem);
+  }
+
+  .teller-grid figure {
+    margin: 0;
+    overflow: hidden;
+    background: var(--bg-alt);
+    aspect-ratio: 3 / 4;
+  }
+
+  .teller-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .teller-grid a:hover img,
+  .teller-grid a:focus-visible img {
+    transform: scale(1.045);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .teller-grid img { transition: none; }
+  }
+
+  @media (max-width: 620px) {
+    .teller-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- Anlässe (Events) ---------- */
+
+  .anlaesse-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.5rem, 1.6vw, 0.9rem);
+  }
+
+  .anlaesse-grid figure {
+    margin: 0;
+    overflow: hidden;
+    background: var(--bg-alt);
+    aspect-ratio: 4 / 3;
+  }
+
+  .anlaesse-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .anlaesse-grid a:hover img,
+  .anlaesse-grid a:focus-visible img {
+    transform: scale(1.045);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anlaesse-grid img { transition: none; }
+  }
+
+  @media (max-width: 620px) {
+    .anlaesse-grid { grid-template-columns: repeat(1, 1fr); }
+  }
+
+  /* ---------- Bild-Zäsur ---------- */
+
+  .break-photo {
+    position: relative;
+    min-height: clamp(280px, 46vw, 460px);
+    overflow: hidden;
+  }
+
+  .break-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 35%;
+  }
+
+  .break-photo .eyebrow {
+    position: absolute;
+    left: clamp(1.4rem, 6vw, 3.2rem);
+    bottom: clamp(1.2rem, 4vw, 2rem);
+    color: #E7C793;
+    background: rgba(11, 15, 13, 0.32);
+    padding: 0.35em 0.7em;
+    backdrop-filter: blur(2px);
+  }
+
+  /* ---------- Stationen ---------- */
+
+  .stationen-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .station {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding-block: 1.1rem;
+    border-top: 1px solid var(--line);
+    transition: padding-inline-start 0.25s ease, border-color 0.25s ease;
+  }
+
+  .station:last-child { border-bottom: 1px solid var(--line); }
+
+  .station:hover {
+    padding-inline-start: 0.5rem;
+    border-color: var(--line-strong);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .station { transition: none; }
+  }
+
+  .station-num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    flex: 0 0 auto;
+    width: 2.4ch;
+  }
+
+  .station-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.9rem;
+    row-gap: 0.15rem;
+  }
+
+  .station-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 500;
+  }
+
+  .station-place {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .station-note {
+    flex-basis: 100%;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .stationen-coda {
+    margin-top: 1.6rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 52ch;
+  }
+
+  /* ---------- Signature / Footer ---------- */
+
+  .signature {
+    text-align: center;
+    padding-block: clamp(3rem, 8vw, 5rem) clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .signature blockquote {
+    margin: 0 auto;
+    max-width: 34ch;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .signature footer {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .signature footer span {
+    color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    .station { align-items: flex-start; }
+  }
+</style>
+
+<header class="hero">
+  <img class="hero-photo" src="images/atelier-2.jpg" alt="Manuel Fördös am Grill, im Profil, im Abendlicht" loading="eager">
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Chef de Cuisine · Köln</span>
+    <h1>Manuel&nbsp;Fördös</h1>
+    <p class="hero-role">Chef de Cuisine für private Dinner, Events und besondere Anlässe</p>
+  </div>
+</header>
+
+<div class="page-inner">
+
+  <section class="kueche" aria-labelledby="kueche-heading">
+    <div class="section-head">
+      <h2 id="kueche-heading">Philosophie</h2>
+    </div>
+    <p>Der Duft von gerösteten Kräutern in heißer Butter, eine Kruste, die unter dem Messer knackt, ein Sud, der stundenlang eingekocht wurde, bis er auf der Zunge explodiert – das ist der Ausgangspunkt jeder Karte. Klare Aromen, saisonale Produkte und eine Technik, die dem Geschmack dient, statt sich vor ihn zu stellen. Kein Konzept von der Stange, sondern ein Menü, das für Ort, Anlass und Gäste neu gedacht wird.</p>
+    <p>Zwischen Tübingen und Köln liegt mehr als eine Wegstrecke – es ist der Bogen einer Küche, die sich nie mit einem Stil zufriedengegeben hat. Ambitioniert in der Technik, facettenreich im Zugriff, kompromisslos im Anspruch: was bleibt, ist kulinarischer Höchstgenuss, der noch lange nachschmeckt.</p>
+  </section>
+
+  <section aria-labelledby="teller-heading">
+    <div class="section-head">
+      <h2 id="teller-heading">Impressionen</h2>
+    </div>
+    <div class="teller-grid">
+      <figure>
+        <a href="images/vorspeise-2.jpg" target="_blank" rel="noopener">
+          <img src="images/vorspeise-2.jpg" alt="Blattsalat mit Tomatenwürfeln, von oben angerichtet" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/fischgang-2.jpg" target="_blank" rel="noopener">
+          <img src="images/fischgang-2.jpg" alt="Geräucherter Lachs, von oben angerichtet, mit Dill und Apfel" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/hauptgang.jpg" target="_blank" rel="noopener">
+          <img src="images/hauptgang.jpg" alt="Rosa gebratenes Fleisch mit grünem Spargel und Kressesalat" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/tatar.jpg" target="_blank" rel="noopener">
+          <img src="images/tatar.jpg" alt="Tatar mit Feldsalat, Physalis und Kirschtomaten, von oben angerichtet" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/event-canapes.jpg" target="_blank" rel="noopener">
+          <img src="images/event-canapes.jpg" alt="Reihe kleiner Vorspeisenschalen mit Spießen, angerichtet für eine Gesellschaft" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/event-dessert.jpg" target="_blank" rel="noopener">
+          <img src="images/event-dessert.jpg" alt="Reihe kleiner Dessertgläser für eine Gesellschaft" loading="lazy">
+        </a>
+      </figure>
+    </div>
+  </section>
+
+  <section class="kueche" aria-labelledby="anlaesse-heading">
+    <div class="section-head">
+      <h2 id="anlaesse-heading">Anlässe</h2>
+    </div>
+    <p>Private Dinner im kleinen Kreis, kulinarische Begleitung von Firmenfeiern und Geschäftsessen, mehrgängige Menüs zur Hochzeit oder zum runden Geburtstag, exklusive Verkostungen mit Weinbegleitung – jeder Anlass bekommt eine eigene Karte, kein Konzept von der Stange.</p>
+    <p>Ebenso gefragt auf großer Bühne: Live-Cooking vor Publikum, zuletzt für das Bundesamt für Gesundheit und Ernährung auf der Singapore Food Expo und der Grünen Woche Berlin.</p>
+  </section>
+
+  <section aria-labelledby="stationen-heading">
+    <div class="section-head">
+      <h2 id="stationen-heading">Stationen</h2>
+    </div>
+    <div class="stationen-list">
+      <div class="station">
+        <span class="station-num">I</span>
+        <div class="station-body">
+          <span class="station-name">Hirsch</span>
+          <span class="station-place">Tübingen</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">II</span>
+        <div class="station-body">
+          <span class="station-name">Ranitzky</span>
+          <span class="station-place">Tübingen</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">III</span>
+        <div class="station-body">
+          <span class="station-name">Kelter</span>
+          <span class="station-place">Tübingen</span>
+          <span class="station-note">Küchenchef</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">IV</span>
+        <div class="station-body">
+          <span class="station-name">Excelsior Hotel Ernst</span>
+          <span class="station-place">Köln</span>
+          <span class="station-note">Fünf-Sterne-Haus am Dom</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">V</span>
+        <div class="station-body">
+          <span class="station-name">PE303</span>
+          <span class="station-place">Rheinauhafen, Köln</span>
+          <span class="station-note">Eventlocation</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">VI</span>
+        <div class="station-body">
+          <span class="station-name">Bundesamt für Gesundheit und Ernährung</span>
+          <span class="station-place">Singapore Food Expo &amp; Grüne Woche Berlin</span>
+          <span class="station-note">Live-Cooking auf internationalen Messen</span>
+        </div>
+      </div>
+    </div>
+    <p class="stationen-coda">Seither: private Küche für Dinner, Events und besondere Anlässe im Kölner Raum und darüber hinaus.</p>
+  </section>
+
+</div>
+
+<div class="break-photo">
+  <img src="images/atelier-1.jpg" alt="Manuel Fördös beim Anrichten am Live-Cooking-Buffet, umgeben von Saucen und Beilagen" loading="lazy">
+  <span class="eyebrow">Am Herd</span>
+</div>
+
+<div class="page-inner">
+  <section class="signature" aria-label="Abschluss" style="border-top:none;">
+    <blockquote>Was zählt, ist der Moment am Tisch.</blockquote>
+    <footer>Manuel Fördös <span>·</span> Köln</footer>
+  </section>
+</div>
+
+</body></html>
