@@ -155,7 +155,7 @@
 
   .teller-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(0.5rem, 1.6vw, 0.9rem);
   }
 
@@ -168,13 +168,13 @@
 
   .teller-grid figure.feature {
     grid-column: 1 / -1;
-    width: min(62%, 480px);
-    margin: clamp(0.3rem, 1vw, 0.6rem) auto 0;
+    width: min(88%, 640px);
+    margin: clamp(0.4rem, 1.4vw, 0.8rem) auto 0;
   }
 
   @media (max-width: 620px) {
     .teller-grid figure.feature {
-      width: min(78%, 420px);
+      width: min(92%, 440px);
     }
   }
 
@@ -194,8 +194,48 @@
     .teller-grid img { transition: none; }
   }
 
-  @media (max-width: 620px) {
-    .teller-grid { grid-template-columns: repeat(2, 1fr); }
+  /* ---------- Lightbox (Impressionen antippen) ---------- */
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 5vw, 3rem);
+    background: rgba(8, 11, 9, 0.94);
+  }
+
+  .lightbox:target {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: zoom-out;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: clamp(0.8rem, 3vw, 1.8rem);
+    right: clamp(0.8rem, 3vw, 1.8rem);
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(241, 233, 216, 0.12);
+    color: var(--text);
+    font-family: var(--font-sans, inherit);
+    font-size: 1.4rem;
+    line-height: 1;
   }
 
   /* ---------- Anlässe (Events) ---------- */
@@ -391,61 +431,73 @@
     </div>
     <div class="teller-grid">
       <figure>
-        <a href="images/jakobsmuschel.jpg" target="_blank" rel="noopener">
+        <a href="#lb-jakobsmuschel">
           <img src="images/jakobsmuschel.jpg" alt="Jakobsmuschel in der Schale mit Forellenkaviar, Kräutern und Radieschen" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/fleischgang.jpg" target="_blank" rel="noopener">
+        <a href="#lb-fleischgang">
           <img src="images/fleischgang.jpg" alt="Rosa gebratenes Fleisch mit bunten Rübenchips, Pilzen und Babykarotten" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/kaviar.jpg" target="_blank" rel="noopener">
+        <a href="#lb-kaviar">
           <img src="images/kaviar.jpg" alt="Törtchen mit Kaviar, pochierter Wachtel und confierter Zwiebel" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/fischgang.jpg" target="_blank" rel="noopener">
+        <a href="#lb-fischgang">
           <img src="images/fischgang.jpg" alt="Mariniertes Fischfilet und Röllchen mit Avocado und Limette" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/kraeutersuppe.jpg" target="_blank" rel="noopener">
+        <a href="#lb-kraeutersuppe">
           <img src="images/kraeutersuppe.jpg" alt="Grüne Kräutersuppe mit Gemüsewürfeln und knusprigem Chip" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/tatar-birne.jpg" target="_blank" rel="noopener">
+        <a href="#lb-tatar-birne">
           <img src="images/tatar-birne.jpg" alt="Tatar mit Birne, Parmesan und Kräuteröl" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/tintenfisch.jpg" target="_blank" rel="noopener">
+        <a href="#lb-tintenfisch">
           <img src="images/tintenfisch.jpg" alt="Gegrillter Tintenfisch mit Avocado, Tomate und Koriander" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/kabeljau.jpg" target="_blank" rel="noopener">
+        <a href="#lb-kabeljau">
           <img src="images/kabeljau.jpg" alt="Kabeljau mit Ikra-Sauce und Kartoffelchips" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/spargel.jpg" target="_blank" rel="noopener">
+        <a href="#lb-spargel">
           <img src="images/spargel.jpg" alt="Grüner Spargel mit eingelegten Zwiebeln und Sauce Hollandaise" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/wachtel.jpg" target="_blank" rel="noopener">
+        <a href="#lb-wachtel">
           <img src="images/wachtel.jpg" alt="Wachtelbrust mit Cordon-bleu-Keule, Pastinaken und Rosenkohl" loading="lazy">
         </a>
       </figure>
       <figure class="feature">
-        <a href="images/obstplatte.jpg" target="_blank" rel="noopener">
+        <a href="#lb-obstplatte">
           <img src="images/obstplatte.jpg" alt="Exotische Obstplatte mit Ananas, Feigen, Drachenfrucht und Physalis" loading="lazy">
         </a>
       </figure>
     </div>
+
+    <a href="#" class="lightbox" id="lb-jakobsmuschel"><img src="images/jakobsmuschel.jpg" alt="Jakobsmuschel in der Schale mit Forellenkaviar, Kräutern und Radieschen"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-fleischgang"><img src="images/fleischgang.jpg" alt="Rosa gebratenes Fleisch mit bunten Rübenchips, Pilzen und Babykarotten"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-kaviar"><img src="images/kaviar.jpg" alt="Törtchen mit Kaviar, pochierter Wachtel und confierter Zwiebel"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-fischgang"><img src="images/fischgang.jpg" alt="Mariniertes Fischfilet und Röllchen mit Avocado und Limette"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-kraeutersuppe"><img src="images/kraeutersuppe.jpg" alt="Grüne Kräutersuppe mit Gemüsewürfeln und knusprigem Chip"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-tatar-birne"><img src="images/tatar-birne.jpg" alt="Tatar mit Birne, Parmesan und Kräuteröl"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-tintenfisch"><img src="images/tintenfisch.jpg" alt="Gegrillter Tintenfisch mit Avocado, Tomate und Koriander"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-kabeljau"><img src="images/kabeljau.jpg" alt="Kabeljau mit Ikra-Sauce und Kartoffelchips"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-spargel"><img src="images/spargel.jpg" alt="Grüner Spargel mit eingelegten Zwiebeln und Sauce Hollandaise"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-wachtel"><img src="images/wachtel.jpg" alt="Wachtelbrust mit Cordon-bleu-Keule, Pastinaken und Rosenkohl"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
+    <a href="#" class="lightbox" id="lb-obstplatte"><img src="images/obstplatte.jpg" alt="Exotische Obstplatte mit Ananas, Feigen, Drachenfrucht und Physalis"><span class="lightbox-close" aria-hidden="true">&times;</span></a>
   </section>
 
   <section class="kueche" aria-labelledby="anlaesse-heading">
