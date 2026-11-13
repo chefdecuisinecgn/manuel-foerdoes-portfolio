@@ -166,6 +166,18 @@
     aspect-ratio: 3 / 4;
   }
 
+  .teller-grid figure.feature {
+    grid-column: 1 / -1;
+    width: min(62%, 480px);
+    margin: clamp(0.3rem, 1vw, 0.6rem) auto 0;
+  }
+
+  @media (max-width: 620px) {
+    .teller-grid figure.feature {
+      width: min(78%, 420px);
+    }
+  }
+
   .teller-grid img {
     width: 100%;
     height: 100%;
@@ -357,7 +369,7 @@
   <img class="hero-photo" src="images/atelier-2.jpg" alt="Manuel Fördös am Grill, im Profil, im Abendlicht" loading="eager">
   <div class="hero-scrim"></div>
   <div class="hero-content">
-    <span class="eyebrow">Chef de Cuisine · Köln</span>
+    <span class="eyebrow">Chef de Cuisine · Culinary Consultant · Köln</span>
     <h1>Manuel&nbsp;Fördös</h1>
     <p class="hero-role">Chef de Cuisine für private Dinner, Events und besondere Anlässe</p>
   </div>
@@ -369,7 +381,7 @@
     <div class="section-head">
       <h2 id="kueche-heading">Philosophie</h2>
     </div>
-    <p>Der Duft von gerösteten Kräutern in heißer Butter, eine Kruste, die unter dem Messer knackt, ein Sud, der stundenlang eingekocht wurde, bis er auf der Zunge explodiert – das ist der Ausgangspunkt jeder Karte. Klare Aromen, saisonale Produkte und eine Technik, die dem Geschmack dient, statt sich vor ihn zu stellen. Kein Konzept von der Stange, sondern ein Menü, das für Ort, Anlass und Gäste neu gedacht wird.</p>
+    <p>Der Duft von frischen Kräutern in heißer Butter, eine Kruste, die unter dem Messer knackt, ein Sud, der stundenlang eingekocht wurde, bis er auf der Zunge explodiert – das ist der Ausgangspunkt jeder Karte. Klare Aromen, saisonale Produkte und eine Technik, die dem Geschmack dient, statt sich vor ihn zu stellen. Kein Konzept von der Stange, sondern ein Menü, das für Ort, Anlass und Gäste neu gedacht wird.</p>
     <p>Zwischen Tübingen und Köln liegt mehr als eine Wegstrecke – es ist der Bogen einer Küche, die sich nie mit einem Stil zufriedengegeben hat. Ambitioniert in der Technik, facettenreich im Zugriff, kompromisslos im Anspruch: was bleibt, ist kulinarischer Höchstgenuss, der noch lange nachschmeckt.</p>
   </section>
 
@@ -379,33 +391,58 @@
     </div>
     <div class="teller-grid">
       <figure>
-        <a href="images/vorspeise-2.jpg" target="_blank" rel="noopener">
-          <img src="images/vorspeise-2.jpg" alt="Blattsalat mit Tomatenwürfeln, von oben angerichtet" loading="lazy">
+        <a href="images/jakobsmuschel.jpg" target="_blank" rel="noopener">
+          <img src="images/jakobsmuschel.jpg" alt="Jakobsmuschel in der Schale mit Forellenkaviar, Kräutern und Radieschen" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/fischgang-2.jpg" target="_blank" rel="noopener">
-          <img src="images/fischgang-2.jpg" alt="Geräucherter Lachs, von oben angerichtet, mit Dill und Apfel" loading="lazy">
+        <a href="images/fleischgang.jpg" target="_blank" rel="noopener">
+          <img src="images/fleischgang.jpg" alt="Rosa gebratenes Fleisch mit bunten Rübenchips, Pilzen und Babykarotten" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/hauptgang.jpg" target="_blank" rel="noopener">
-          <img src="images/hauptgang.jpg" alt="Rosa gebratenes Fleisch mit grünem Spargel und Kressesalat" loading="lazy">
+        <a href="images/kaviar.jpg" target="_blank" rel="noopener">
+          <img src="images/kaviar.jpg" alt="Törtchen mit Kaviar, pochierter Wachtel und confierter Zwiebel" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/tatar.jpg" target="_blank" rel="noopener">
-          <img src="images/tatar.jpg" alt="Tatar mit Feldsalat, Physalis und Kirschtomaten, von oben angerichtet" loading="lazy">
+        <a href="images/fischgang.jpg" target="_blank" rel="noopener">
+          <img src="images/fischgang.jpg" alt="Mariniertes Fischfilet und Röllchen mit Avocado und Limette" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/event-canapes.jpg" target="_blank" rel="noopener">
-          <img src="images/event-canapes.jpg" alt="Reihe kleiner Vorspeisenschalen mit Spießen, angerichtet für eine Gesellschaft" loading="lazy">
+        <a href="images/kraeutersuppe.jpg" target="_blank" rel="noopener">
+          <img src="images/kraeutersuppe.jpg" alt="Grüne Kräutersuppe mit Gemüsewürfeln und knusprigem Chip" loading="lazy">
         </a>
       </figure>
       <figure>
-        <a href="images/event-dessert.jpg" target="_blank" rel="noopener">
-          <img src="images/event-dessert.jpg" alt="Reihe kleiner Dessertgläser für eine Gesellschaft" loading="lazy">
+        <a href="images/tatar-birne.jpg" target="_blank" rel="noopener">
+          <img src="images/tatar-birne.jpg" alt="Tatar mit Birne, Parmesan und Kräuteröl" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/tintenfisch.jpg" target="_blank" rel="noopener">
+          <img src="images/tintenfisch.jpg" alt="Gegrillter Tintenfisch mit Avocado, Tomate und Koriander" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/kabeljau.jpg" target="_blank" rel="noopener">
+          <img src="images/kabeljau.jpg" alt="Kabeljau mit Ikra-Sauce und Kartoffelchips" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/spargel.jpg" target="_blank" rel="noopener">
+          <img src="images/spargel.jpg" alt="Grüner Spargel mit eingelegten Zwiebeln und Sauce Hollandaise" loading="lazy">
+        </a>
+      </figure>
+      <figure>
+        <a href="images/wachtel.jpg" target="_blank" rel="noopener">
+          <img src="images/wachtel.jpg" alt="Wachtelbrust mit Cordon-bleu-Keule, Pastinaken und Rosenkohl" loading="lazy">
+        </a>
+      </figure>
+      <figure class="feature">
+        <a href="images/obstplatte.jpg" target="_blank" rel="noopener">
+          <img src="images/obstplatte.jpg" alt="Exotische Obstplatte mit Ananas, Feigen, Drachenfrucht und Physalis" loading="lazy">
         </a>
       </figure>
     </div>
@@ -416,7 +453,7 @@
       <h2 id="anlaesse-heading">Anlässe</h2>
     </div>
     <p>Private Dinner im kleinen Kreis, kulinarische Begleitung von Firmenfeiern und Geschäftsessen, mehrgängige Menüs zur Hochzeit oder zum runden Geburtstag, exklusive Verkostungen mit Weinbegleitung – jeder Anlass bekommt eine eigene Karte, kein Konzept von der Stange.</p>
-    <p>Ebenso gefragt auf großer Bühne: Live-Cooking vor Publikum, zuletzt für das Bundesamt für Gesundheit und Ernährung auf der Singapore Food Expo und der Grünen Woche Berlin.</p>
+    <p>Ebenso gefragt auf großer Bühne: Live-Cooking vor Publikum, zuletzt für das Bundesministerium für Ernährung und Landwirtschaft auf der Singapore Food Expo und der Grünen Woche Berlin.</p>
   </section>
 
   <section aria-labelledby="stationen-heading">
@@ -427,27 +464,53 @@
       <div class="station">
         <span class="station-num">I</span>
         <div class="station-body">
-          <span class="station-name">Hirsch</span>
+          <span class="station-name">Hirsch Bebenhausen</span>
           <span class="station-place">Tübingen</span>
+          <span class="station-note">Ausbildung zum Koch · Ernst Fischer, Ehrenpräsident der DEHOGA</span>
         </div>
       </div>
       <div class="station">
         <span class="station-num">II</span>
         <div class="station-body">
-          <span class="station-name">Ranitzky</span>
+          <span class="station-name">Saints &amp; Scholars Public House</span>
           <span class="station-place">Tübingen</span>
+          <span class="station-note">Stellvertretende Küchenleitung</span>
         </div>
       </div>
       <div class="station">
         <span class="station-num">III</span>
         <div class="station-body">
-          <span class="station-name">Kelter</span>
+          <span class="station-name">Literaturcafé an der Kunsthalle</span>
           <span class="station-place">Tübingen</span>
-          <span class="station-note">Küchenchef</span>
+          <span class="station-note">Souschef</span>
         </div>
       </div>
       <div class="station">
         <span class="station-num">IV</span>
+        <div class="station-body">
+          <span class="station-name">Kelter</span>
+          <span class="station-place">Tübingen</span>
+          <span class="station-note">Küchenchef und Souschef</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">V</span>
+        <div class="station-body">
+          <span class="station-name">Waldhäuserhof</span>
+          <span class="station-place">Tübingen</span>
+          <span class="station-note">Souschef</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">VI</span>
+        <div class="station-body">
+          <span class="station-name">Ranitzky am Markt</span>
+          <span class="station-place">Tübingen</span>
+          <span class="station-note">Küchenleitung</span>
+        </div>
+      </div>
+      <div class="station">
+        <span class="station-num">VII</span>
         <div class="station-body">
           <span class="station-name">Excelsior Hotel Ernst</span>
           <span class="station-place">Köln</span>
@@ -455,19 +518,11 @@
         </div>
       </div>
       <div class="station">
-        <span class="station-num">V</span>
+        <span class="station-num">VIII</span>
         <div class="station-body">
-          <span class="station-name">PE303</span>
-          <span class="station-place">Rheinauhafen, Köln</span>
-          <span class="station-note">Eventlocation</span>
-        </div>
-      </div>
-      <div class="station">
-        <span class="station-num">VI</span>
-        <div class="station-body">
-          <span class="station-name">Bundesamt für Gesundheit und Ernährung</span>
-          <span class="station-place">Singapore Food Expo &amp; Grüne Woche Berlin</span>
-          <span class="station-note">Live-Cooking auf internationalen Messen</span>
+          <span class="station-name">Kult;Büro</span>
+          <span class="station-place">Köln</span>
+          <span class="station-note">Chef de Cuisine · Leitung der Eventlocation PE303 · Betreuung verschiedener Events der Kochschule Morgenstern · Messe-Einsätze fürs BMEL u. a. in Berlin, Essen, Düsseldorf, Köln und Singapur</span>
         </div>
       </div>
     </div>
